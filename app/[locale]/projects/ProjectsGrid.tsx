@@ -1,15 +1,14 @@
 "use client";
-import ProjectCard from "./ProjectCard";
-import {projects} from "@/app/lib/demo-projects";
+
+import {projects} from "@/app/lib/demo-data";
+import ProjectCard from "@/app/[locale]/components/ProjectCard";
 
 export default function ProjectsGrid() {
     return (
-        <div className="space-y-20">
-            {projects.map((p, i) => (
-                <ProjectCard key={p.id} project={p} index={i} />
+        <div className="space-y-16">
+            {projects.map((p) => (
+                <ProjectCard key={p.id} project={p} tall={false} />
             ))}
         </div>
     );
 }
-
-

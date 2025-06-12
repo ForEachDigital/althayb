@@ -1,11 +1,12 @@
 "use client";
-import Image from "next/image";
-import { projects } from "@/app/lib/demo-data";
-import { MapPin } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import Link from "next/link";
+import {projects} from "@/app/lib/demo-data";
+import ProjectCard from "@/app/[locale]/components/ProjectCard";
 
-export default function Projects() {
+export default function HomeProjectsSection() {
     const t = useTranslations("Projects");
+    const locale = useLocale();
 
     return (
         <section id="projects" className="bg-gray-50 py-20">
@@ -14,42 +15,21 @@ export default function Projects() {
                     {t("title")}
                 </h2>
 
-                <div className="space-y-20">
-                    {projects.map((proj, i) => (
-                        <article
-                            key={proj.id}
-                            data-aos={i % 2 === 0 ? "fade-right" : "fade-left"}
-                            className="overflow-hidden rounded-2xl bg-white shadow-sm md:flex md:gap-6 hover:shadow-2xl"
-                        >
-                            {/* Taller cover image */}
-                            <div className="relative h-80 w-full md:h-auto md:w-1/3">
-                                <Image
-                                    src={proj.gallery[0]}
-                                    alt={proj.title}
-                                    fill
-                                    className="object-cover"
-                                />
-                            </div>
-
-                            {/* Text content */}
-                            <div className="flex flex-col p-6 md:w-2/3">
-                                <h3 className="mb-1 text-2xl font-semibold text-primary">
-                                    {proj.title}
-                                </h3>
-
-                                {proj.location && (
-                                    <div className="mb-4 flex items-center gap-2 text-gray-500">
-                                        <MapPin className="h-5 w-5 text-accent" />
-                                        <span>{proj.location}</span>
-                                    </div>
-                                )}
-
-                                <p className="line-clamp-3 text-gray-700 leading-relaxed font-montserrat">
-                                    {proj.shortDescription}
-                                </p>
-                            </div>
-                        </article>
+                {/* — cards — */}
+                <div className="space-y-16">
+                    {projects.slice(0, 4).map((p, i) => (
+                        <ProjectCard key={p.id} project={p} index={i} aos tall />
                     ))}
+                </div>
+
+                {/* — “view all” text button — */}
+                <div className="mt-12 text-center">
+                    <Link
+                        href={`/${locale}/projects`}
+                        className="inline-block text-2xl text-primary underline-offset-4 transition-colors hover:text-accent hover:underline"
+                    >
+                        {t("viewAll")}
+                    </Link>
                 </div>
             </div>
         </section>

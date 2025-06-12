@@ -51,7 +51,8 @@
     "title": "Our Projects",
     "pageTitle": "All Projects",
     "ongoing": "Ongoing",
-    "completed": "Completed"
+    "completed": "Completed",
+    "viewAll": "View All Projects"
   },
   "Footer": {
     "rights": "© {year} Althyab. All rights reserved."
