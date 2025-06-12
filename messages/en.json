@@ -7,8 +7,20 @@
     "instagram": "Instagram",
     "snapchat": "Snapchat"
   },
-  "hero": {
-    "button": "View Our Services"
+  "Header": {
+    "home": "Home",
+    "about": "About Us",
+    "goals": "Our Goals",
+    "stats": "Statistics",
+    "contact": "Contact",
+    "projects": "Projects",
+    "partners": "Partners"
+  },
+  "Hero": {
+    "headline": "Real Estate Solutions that Elevate Ambition",
+    "subheading": "We’re building tomorrow’s communities—today, across Saudi Arabia.",
+    "ctaProjects": "See Projects",
+    "ctaContact": "Contact Us"
   },
   "About": {
     "title": "About Us",
@@ -36,10 +48,24 @@
     "unitSuffix": " units"
   },
   "Projects": {
-    "title": "Our Projects"
+    "title": "Our Projects",
+    "pageTitle": "All Projects",
+    "ongoing": "Ongoing",
+    "completed": "Completed"
   },
   "Footer": {
     "rights": "© {year} Althyab. All rights reserved."
+  },
+  "Contact": {
+    "pageTitle": "Contact Us",
+    "pageSubtitle": "We’d love to hear from you. Fill out the form and we’ll get back to you soon.",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "contact": "Contact",
+    "message": "Message",
+    "send": "Send",
+    "success": "Your message has been sent! We will reply shortly."
   },
   "navbar": {
     "home": "Home",

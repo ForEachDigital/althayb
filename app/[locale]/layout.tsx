@@ -32,8 +32,6 @@ export const metadata: Metadata = {
     },
 
 
-
-
     openGraph: {
         title: "Althyab Real Estate Development",
         description:
@@ -76,6 +74,7 @@ export default async function LocaleLayout({
         <head>
             {/* Favicon */}
             <link rel="icon" href="/logo.png" type="image/png" sizes="any" />
+            <title>Althyab </title>
         </head>
 
         <body>

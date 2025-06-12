@@ -19,7 +19,7 @@ export default function Projects() {
                         <article
                             key={proj.id}
                             data-aos={i % 2 === 0 ? "fade-right" : "fade-left"}
-                            className="overflow-hidden rounded-2xl bg-white shadow-sm md:flex md:gap-6"
+                            className="overflow-hidden rounded-2xl bg-white shadow-sm md:flex md:gap-6 hover:shadow-2xl"
                         >
                             {/* Taller cover image */}
                             <div className="relative h-80 w-full md:h-auto md:w-1/3">
