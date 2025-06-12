@@ -1,0 +1,75 @@
+{
+  "contact": {
+    "title": "Get in Touch",
+    "phone": "Phone",
+    "whatsapp": "WhatsApp",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "snapchat": "Snapchat"
+  },
+  "hero": {
+    "button": "View Our Services"
+  },
+  "About": {
+    "title": "About Us",
+    "paragraph": "Althyab Real Estate Development is a pioneering Saudi company shaping the future of modern, integrated communities.\nWe believe real estate is more than buildings — it’s about creating life with quality, transparency, and sustainability.\nOur expertise is dedicated to delivering residential and commercial projects that inspire trust and meet the ambitions of our clients across the Kingdom."
+  },
+  "Goals": {
+    "title": "Our Goals",
+    "list": [
+      "Build residential communities rooted in sustainable principles.",
+      "Achieve 95%+ customer satisfaction on every project.",
+      "Apply cutting-edge smart-building technology in construction and management.",
+      "Advance Saudi Vision 2030 by creating new employment opportunities.",
+      "Maintain full transparency and world-class quality & governance standards."
+    ]
+  },
+  "Stats": {
+    "title": "Our Statistics",
+    "totalSales": "Total sales (last year)",
+    "residentialUnits": "Managed residential units",
+    "commercialUnits": "Managed commercial units",
+    "totalAreaSold": "Total area sold",
+    "salesPrefix": " SAR ",
+    "salesSuffix": " M ",
+    "areaSuffix": " M m² ",
+    "unitSuffix": " units"
+  },
+  "Projects": {
+    "title": "Our Projects"
+  },
+  "Footer": {
+    "rights": "© {year} Althyab. All rights reserved."
+  },
+  "navbar": {
+    "home": "Home",
+    "about": "About Us",
+    "why": "Why Choose Us",
+    "services": "Our Services",
+    "contact": "Contact Us"
+  },
+  "map": {
+    "title": "Our Location on the Map"
+  },
+  "reviews": {
+    "title": "Customer Reviews"
+  },
+  "services": {
+    "title": "Our Services",
+    "viewDetails": "View Details"
+  },
+  "why": {
+    "title": "Why Choose Us",
+    "fast": "Fast Response",
+    "affordable": "Affordable Prices",
+    "trusted": "Trusted Professionals",
+    "local": "Local Services"
+  },
+  "meta": {
+    "home": {
+      "title": "Best Home Services in Riyadh",
+      "description": "Fast and reliable maintenance, cleaning, and A/C services in Saudi Arabia."
+    }
+  }
+
+}
