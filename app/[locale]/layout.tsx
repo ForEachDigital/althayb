@@ -31,6 +31,9 @@ export const metadata: Metadata = {
         icon: "/logo.png",
     },
 
+
+
+
     openGraph: {
         title: "Althyab Real Estate Development",
         description:
