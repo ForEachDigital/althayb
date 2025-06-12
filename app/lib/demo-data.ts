@@ -21,6 +21,7 @@ export const stats = {
 export type Project = {
     id: string;
     title: string;
+    date: string;          // ISO `YYYY-MM-DD`
     location: string;
     shortDescription: string;
     description: string;
@@ -31,6 +32,7 @@ export type Project = {
 export const projects: Project[] = [
     {
         id: "p-01",
+        date : "2024-11-10",
         title: "مجمع الياسمين السكني",
         location: "شمال الرياض",
         shortDescription:
@@ -41,6 +43,8 @@ export const projects: Project[] = [
     },
     {
         id: "p-02",
+        date : "2024-11-10",
+
         title: "برج السحاب التجاري",
         location: "وسط جدة",
         shortDescription:
@@ -52,6 +56,8 @@ export const projects: Project[] = [
     },
     {
         id: "p-03",
+        date : "2024-11-10",
+
         title: "مركز الريان الطبي",
         location: "المدينة المنورة",
         shortDescription:
@@ -62,6 +68,8 @@ export const projects: Project[] = [
     },
     {
         id: "p-04",
+        date : "2024-11-10",
+
         title: "مول البستان",
         location: "جنوب الرياض",
         shortDescription:
@@ -72,6 +80,8 @@ export const projects: Project[] = [
     },
     {
         id: "p-05",
+        date : "2024-11-10",
+
         title: "حي الندى الذهبي",
         location: "الدمام",
         shortDescription:
@@ -82,6 +92,8 @@ export const projects: Project[] = [
     },
     {
         id: "p-06",
+        date : "2024-11-10",
+
         title: "مجمع التقنية للأعمال",
         location: "الخبر",
         shortDescription:

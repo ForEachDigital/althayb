@@ -28,7 +28,7 @@ const variantMap = {
     primary:
         "bg-primary text-white border-transparent hover:bg-primary/90 disabled:bg-primary/50",
     secondary:
-        "bg-success text-white border-transparent hover:bg-success/90 disabled:bg-success/50",
+        "bg-accent text-white border-transparent hover:bg-success/90 disabled:bg-success/50",
     outline:
         "bg-transparent text-text border-outline hover:bg-outline/10 disabled:opacity-60",
     ghost:

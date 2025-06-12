@@ -49,7 +49,7 @@ export default function LanguageSelect() {
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
             >
-                <MenuItems className="absolute right-0 mt-2 w-40 origin-top-right rounded bg-white shadow-lg ring-1 ring-black/5 focus:outline-none z-10">
+                <MenuItems className="absolute  text-black right-0 mt-2 w-40 origin-top-right rounded bg-white shadow-lg ring-1 ring-black/5 focus:outline-none z-10">
                     {SUPPORTED_LOCALES.map(({code, label, region}) => (
                         <MenuItem key={code}>
                             {({active}) => (
