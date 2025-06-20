@@ -38,15 +38,16 @@ export default function Header() {
         { label: t("stats"),   id: "stats"    },
         { label: t("projects"),id: "projects" },
         { label: t("partners"),id: "partners" },
-        { label: t("contact"), id: "contact"  }
+        { label: t("contact"), id: "contact" , page: true }
     ];
 
-    /* ── smart navigation for anchors / pages ──────── */
-    const handleNav = (hash: string) => {
-        if (pathname === `/${locale}` || pathname === "/") {
-            document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
+    const handleNav = (id: string, isPage = false) => {
+        if (isPage) {
+            router.push(`/${locale}/${id}`);
+        } else if (isHome) {
+            document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
         } else {
-            router.push(`/${locale}/#${hash}`);
+            router.push(`/${locale}/#${id}`);
         }
         setOpen(false);
     };
@@ -55,9 +56,11 @@ export default function Header() {
     const base =
         "fixed inset-x-0 top-0 z-20 flex items-center h-14 md:h-16 transition-all duration-300";
     const mobile = "bg-white text-primary shadow-lg";
-    const desktop = scrolled
-        ? "md:bg-white/80 md:text-black md:shadow-lg"
-        : "md:bg-white/10 md:backdrop-blur-sm md:text-black";
+    const desktop = isHome
+        ? scrolled
+            ? "md:bg-white/80 md:text-black md:shadow-lg"
+            : "md:bg-white/10 md:backdrop-blur-sm md:text-white"
+        : "md:bg-white md:text-black md:shadow-lg";
 
     return (
         <>
@@ -66,18 +69,18 @@ export default function Header() {
                 <div className="container mx-auto flex w-full items-center justify-between px-4 py-2 md:py-3">
                     {/* Logo */}
                     <Link href={`/${locale}`} className="block shrink-0">
-                        <Image src="/logo.png" width={50} height={24} alt="Althyab Logo" />
+                        <Image src="/logo.png" width={75} height={24} alt="Althyab Logo" />
                     </Link>
 
                     {/* Desktop links */}
                     <div className="hidden items-center gap-6 md:flex">
                         <LanguageSelect />
                         <ul className="flex gap-6">
-                            {links.map(({ label, id }) => (
+                            {links.map(({ label, id, page }) => (
                                 <li key={id}>
                                     <button
-                                        onClick={() => handleNav(id)}
-                                        className="font-semibold  hover:text-accent transition-colors"
+                                        onClick={() => handleNav(id, page)}
+                                        className="font-semibold hover:text-accent transition-colors"
                                     >
                                         {label}
                                     </button>

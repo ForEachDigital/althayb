@@ -11,6 +11,7 @@ import React from "react";
 
 import Header from "@/app/[locale]/components/Header";
 import AOSInit from "@/components/_components/AOSInit";
+import SiteFooter from "@/app/[locale]/components/SiteFooter";
 
 /* ------------ global SEO ------------- */
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
@@ -82,6 +83,7 @@ export default async function LocaleLayout({
             <Header />
             <AOSInit />   {/* Global scroll-animation init */}
             {children}
+            <SiteFooter />
         </NextIntlClientProvider>
         </body>
         </html>
