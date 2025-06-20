@@ -18,7 +18,7 @@ export default function ProjectCard({ project, index = 0, aos, tall }: Props) {
     return (
         <article
             data-aos={aos ? (index % 2 === 0 ? "fade-right" : "fade-left") : undefined}
-            className="group overflow-hidden rounded-3xl bg-white shadow-md transition hover:shadow-2xl md:flex md:gap-8"
+            className="group  font-montserrat overflow-hidden rounded-3xl bg-white shadow-md transition hover:shadow-2xl md:flex md:gap-8"
         >
             {/* Cover image */}
             <div className={`relative w-full md:w-1/3 ${coverHeight}`}>

@@ -14,14 +14,14 @@ export default function ContactPage() {
 
     return (
         <main className="bg-gray-50 py-20">
-            <div className="container  mx-auto grid justify-center items-center max-w-6xl gap-12 px-4 md:grid-cols-2">
+            <div className="container  mx-auto grid justify-center items-start max-w-6xl gap-12 px-4 md:grid-cols-2">
                 {/* Illustration / hero side */}
                 <div className="relative hidden h-[450px] w-full md:block">
                     <Image
                         src="/logo.png" /* add any nice free image */
                         alt="Contact illustration"
                         fill
-                        className="object-cover rounded-3xl shadow-lg"
+                        className="object-cover mt-5 rounded-3xl shadow-lg"
                         priority
                     />
                 </div>
