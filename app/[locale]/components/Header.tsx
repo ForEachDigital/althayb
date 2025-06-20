@@ -80,7 +80,7 @@ export default function Header() {
                                 <li key={id}>
                                     <button
                                         onClick={() => handleNav(id, page)}
-                                        className="font-semibold hover:text-accent transition-colors"
+                                        className="font-semibold font-montserrat hover:text-accent transition-colors"
                                     >
                                         {label}
                                     </button>
@@ -116,10 +116,10 @@ export default function Header() {
 
                         <LanguageSelect />
 
-                        {links.map(({ label, id }) => (
+                        {links.map(({  label, id, page }) => (
                             <button
                                 key={id}
-                                onClick={() => handleNav(id)}
+                                onClick={() => handleNav(id, page)}
                                 className="block py-2 text-lg font-bold hover:text-accent"
                             >
                                 {label}

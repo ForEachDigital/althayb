@@ -47,14 +47,12 @@
     "areaSuffix": " مليون م²",
     "unitSuffix": " وحدة"
   },
-
   "Projects": {
     "title": "مشاريعنا",
     "pageTitle": "جميع المشاريع",
     "ongoing": "قيد التنفيذ",
     "completed": "مكتمل",
     "viewAll": "عرض جميع المشاريع"
-
   },
   "Footer": {
     "rights": "© {year} شركة الثياب. جميع الحقوق محفوظة."
@@ -71,6 +69,11 @@
   },
   "Partners": {
     "title": "شركاء النجاح"
+  },
+  "Status": {
+    "for_sale": "للبيع",
+    "under_construction": "تحت الإنشاء",
+    "sold": "تم البيع"
   },
   "navbar": {
     "home": "الرئيسية",
