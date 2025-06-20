@@ -71,6 +71,11 @@
   "Partners": {
     "title": "Successful Partners"
   },
+  "Status": {
+    "for_sale": "For Sale",
+    "under_construction": "Under Construction",
+    "sold": "Sold Out"
+  },
   "navbar": {
     "home": "Home",
     "about": "About Us",

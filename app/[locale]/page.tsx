@@ -18,7 +18,6 @@ export default function Home() {
         <Stats />
         <Projects />
         <Partners />
-        <SiteFooter />
       </main>
   );
 }

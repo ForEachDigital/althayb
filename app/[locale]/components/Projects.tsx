@@ -18,7 +18,7 @@ export default function HomeProjectsSection() {
                 {/* — cards — */}
                 <div className="space-y-16">
                     {projects.slice(0, 4).map((p, i) => (
-                        <ProjectCard key={p.id} project={p} index={i} aos tall />
+                        <ProjectCard key={p.id} project={p} index={i}  />
                     ))}
                 </div>
 

@@ -43,8 +43,8 @@ export default function Hero() {
                     priority
                 />
 
-                <h1 className="mb-4 text-4xl font-bold md:text-6xl">{t("headline")}</h1>
-                <p className="mb-10 max-w-xl text-lg md:text-2xl">{t("subheading")}</p>
+                <h1 className="mb-4 text-4xl font-bold font-montserrat md:text-6xl">{t("headline")}</h1>
+                <p className="mb-10 max-w-xl text-lg  font-montserrat md:text-2xl">{t("subheading")}</p>
 
                 {/* CTA buttons --------------------------------------------------- */}
                 <div className="flex flex-wrap justify-center gap-4">
@@ -52,12 +52,12 @@ export default function Hero() {
                     <Link href={`/${locale}/projects`} className="group relative">
                         <button
                             // onClick={handleScroll}
-                            className="relative overflow-hidden rounded-full px-15 py-4 font-bold text-white shadow-lg
+                            className="relative overflow-hidden  rounded-full px-15 py-4 font-bold text-white shadow-lg
                [background-size:400%] bg-gradient-to-r from-accent via-primary to-success
                transition-transform duration-300 hover:scale-110"
                             style={{animation: "gradient-x 6s ease infinite"}}
                         >
-                            <span className="relative z-10">{t("ctaProjects")}</span>
+                            <span className="relative z-10 font-montserrat ">{t("ctaProjects")}</span>
 
                             {/* sheen */}
                             <span
@@ -69,7 +69,7 @@ export default function Hero() {
 
 
                     {/* Secondary | outline morph */}
-                    <Link href={`/${locale}/contact`} className="group relative">
+                    <Link href={`/${locale}/contact`} className="group  font-montserrat relative">
     <span
         className="relative z-10 flex items-center gap-2 rounded-full px-10 py-4 font-bold
                  text-white transition-transform duration-300 group-hover:scale-105"

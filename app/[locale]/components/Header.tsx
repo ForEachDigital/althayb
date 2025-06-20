@@ -1,95 +1,133 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { useTranslations, useLocale } from "next-intl";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { useTranslations, useLocale } from "next-intl";
+import { usePathname, useRouter } from "next/navigation";
+import { HiMenu, HiX } from "react-icons/hi";
 import LanguageSelect from "@/components/LanguageSelect";
 
 export default function Header() {
+    /* ── state ─────────────────────────────────────── */
+    const [open, setOpen] = useState(false);     // mobile drawer
     const [scrolled, setScrolled] = useState(false);
-    const t       = useTranslations("Header");
-    const locale  = useLocale();
+
+    /* ── i18n & routing helpers ────────────────────── */
+    const t        = useTranslations("Header");
+    const locale   = useLocale();
     const pathname = usePathname();
+    const router   = useRouter();
+    const isHome   = pathname === `/${locale}` || pathname === "/" || pathname === `/${locale}/`;
+    const isRtl    = locale === "ar";
 
-    /* Is this the home page? */
-    const isHome =
-        pathname === `/${locale}` || pathname === "/" || pathname === `/${locale}/`;
-
+    /* ── change bg on scroll (desktop only) ────────── */
     useEffect(() => {
         if (!isHome) return;
-        const onScroll = () => setScrolled(window.scrollY > 64);
+        const onScroll = () => setScrolled(window.scrollY > 470);
         onScroll();
         window.addEventListener("scroll", onScroll);
         return () => window.removeEventListener("scroll", onScroll);
     }, [isHome]);
 
-    /* Nav items */
-    const nav = [
-        { label: t("home"),    href: "#hero"     },
-        { label: t("about"),   href: "#about"    },
-        { label: t("goals"),   href: "#goals"    },
-        { label: t("stats"),   href: "#stats"    },
-        { label: t("projects"),href: "#projects" },
-        { label: t("partners"),href: "#partners" },
-        { label: t("contact"), href: "/contact"  },   // real page
+    /* ── nav items ─────────────────────────────────── */
+    const links = [
+        { label: t("home"),    id: "hero"     },
+        { label: t("about"),   id: "about"    },
+        { label: t("goals"),   id: "goals"    },
+        { label: t("stats"),   id: "stats"    },
+        { label: t("projects"),id: "projects" },
+        { label: t("partners"),id: "partners" },
+        { label: t("contact"), id: "contact" , page: true }
     ];
 
-    /* Smooth-scroll only for #anchors on home */
-    const handleScroll = (hash: string) => (e: React.MouseEvent) => {
-        if (!isHome || !hash.startsWith("#")) return;   // let Link work normally
-        e.preventDefault();
-        const el = document.querySelector(hash);
-        el?.scrollIntoView({ behavior: "smooth", block: "start" });
+    const handleNav = (id: string, isPage = false) => {
+        if (isPage) {
+            router.push(`/${locale}/${id}`);
+        } else if (isHome) {
+            document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+        } else {
+            router.push(`/${locale}/#${id}`);
+        }
+        setOpen(false);
     };
 
-    /* Styling */
-    const headerStyle = isHome
+    /* ── styles (mobile bar is solid; desktop gets blur) ─ */
+    const base =
+        "fixed inset-x-0 top-0 z-20 flex items-center h-14 md:h-16 transition-all duration-300";
+    const mobile = "bg-white text-primary shadow-lg";
+    const desktop = isHome
         ? scrolled
-            ? "bg-white/95 shadow-md text-black"
-            : "bg-white/10 backdrop-blur-lg text-white"
-        : "bg-white shadow-md text-black";
+            ? "md:bg-white/80 md:text-black md:shadow-lg"
+            : "md:bg-white/10 md:backdrop-blur-sm md:text-white"
+        : "md:bg-white md:text-black md:shadow-lg";
 
     return (
-        <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${headerStyle}`}>
-            <div className="container mx-auto flex h-16 w-full items-center justify-between px-4">
-                {/* Logo */}
-                <Link
-                    href={`/${locale}#hero`}
-                    onClick={handleScroll("#hero")}
-                    className="relative block h-15 w-32 shrink-0"
+        <>
+            {/* ==== TOP BAR ==================================================== */}
+            <nav className={`${base} ${mobile} ${desktop}`}>
+                <div className="container mx-auto flex w-full items-center justify-between px-4 py-2 md:py-3">
+                    {/* Logo */}
+                    <Link href={`/${locale}`} className="block shrink-0">
+                        <Image src="/logo.png" width={75} height={24} alt="Althyab Logo" />
+                    </Link>
+
+                    {/* Desktop links */}
+                    <div className="hidden items-center gap-6 md:flex">
+                        <LanguageSelect />
+                        <ul className="flex gap-6">
+                            {links.map(({ label, id, page }) => (
+                                <li key={id}>
+                                    <button
+                                        onClick={() => handleNav(id, page)}
+                                        className="font-semibold font-montserrat hover:text-accent transition-colors"
+                                    >
+                                        {label}
+                                    </button>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Mobile burger */}
+                    <button className="text-2xl md:hidden" onClick={() => setOpen(true)}>
+                        <HiMenu />
+                    </button>
+                </div>
+            </nav>
+
+            {/* ==== MOBILE OVERLAY + DRAWER =============================== */}
+            {open && (
+                <div
+                    className="fixed inset-0 z-30 bg-black/40 md:hidden"
+                    onClick={() => setOpen(false)}
                 >
-                    <Image src="/logo.png" alt="Althyab" fill className="object-contain" priority />
-                </Link>
+                    <aside
+                        className={`
+              absolute top-0 h-full w-64 space-y-6 bg-white p-6 shadow-xl
+              transition-transform duration-300
+              ${isRtl ? "left-0" : "right-0"}
+            `}
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <button className="mb-4 text-3xl" onClick={() => setOpen(false)}>
+                            <HiX />
+                        </button>
 
-                {/* Desktop nav */}
-                <nav className="hidden items-center gap-8 md:flex">
-                    <LanguageSelect />
+                        <LanguageSelect />
 
-                    {nav.map(({ label, href }) => {
-                        const isAnchor  = href.startsWith("#");
-
-                        /* ➜ Always point anchors to home root when away from home */
-                        const fullHref = isAnchor
-                            ? (isHome ? href : `/${locale}${href}`)   // ✔ fixes /contact#about bug
-                            : `/${locale}${href}`;                   // normal pages
-
-                        /* ➜ Only smooth–scroll when we're on home *and* link is anchor */
-                        const clickHandler = isHome && isAnchor ? handleScroll(href) : undefined;
-
-                        return (
-                            <Link
-                                key={href}
-                                href={fullHref}
-                                onClick={clickHandler}
-                                className="text-sm font-bold transition-colors hover:text-accent"
+                        {links.map(({  label, id, page }) => (
+                            <button
+                                key={id}
+                                onClick={() => handleNav(id, page)}
+                                className="block py-2 text-lg font-bold hover:text-accent"
                             >
                                 {label}
-                            </Link>
-                        );
-                    })}
-                </nav>
-            </div>
-        </header>
+                            </button>
+                        ))}
+                    </aside>
+                </div>
+            )}
+        </>
     );
 }

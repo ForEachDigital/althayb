@@ -7,7 +7,7 @@ export default function ProjectsGrid() {
     return (
         <div className="space-y-16">
             {projects.map((p) => (
-                <ProjectCard key={p.id} project={p} tall={false} />
+                <ProjectCard key={p.id} project={p}  />
             ))}
         </div>
     );
