@@ -104,8 +104,43 @@ export const projects: Project[] = [
     },
 ];
 
+// app/lib/demo-data.ts
+
 export const partners = [
-    { name: "Saudi Build Co.", logo: "/logo.png", url: "#" },
-    { name: "Foreach", logo: "/foreach_logo.png", url: "#" },
-    { name: "Vision 2030", logo: "/logo.png", url: "#" },
+    {
+        id: "greenpipes",
+        name: "Green Pipes",
+        logo: "/partners/green_pipes.png",
+        url: "#",
+    },
+    {
+        id: "foreach",
+        name: "Foreach",
+        logo: "/partners/foreach_logo.png",
+        url: "#",
+    },
+    {
+        id: "municipality",
+        name: "Municipality",
+        logo: "/partners/municipality.svg",
+        url: "#",
+    },
+    {
+        id: "malath",
+        name: "Malath",
+        logo: "/partners/malath.svg",
+        url: "#",
+    },
+    {
+        id: "alrajhy",
+        name: "Al Rajhy Bank",
+        logo: "/partners/bank_elrajhy.svg",
+        url: "#",
+    },
+    {
+        id: "alfanar",
+        name: "Alfanar",
+        logo: "/partners/alfanar-logo.svg",
+        url: "#",
+    },
 ];

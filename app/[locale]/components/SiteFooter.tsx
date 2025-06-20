@@ -2,9 +2,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import {Facebook, InstagramIcon} from "lucide-react";
-import {AiOutlineWhatsApp} from "react-icons/ai";
-
+import { Facebook, InstagramIcon } from "lucide-react";
+import {
+    AiOutlineWhatsApp,
+    AiOutlineTwitter,
+} from "react-icons/ai";
+import { FaTiktok, FaTelegramPlane, FaSnapchatGhost } from "react-icons/fa";
 
 export default function SiteFooter() {
     const t = useTranslations("Footer");
@@ -14,6 +17,10 @@ export default function SiteFooter() {
         { name: "Facebook", href: "https://www.facebook.com/profile.php?id=61576235373156", icon: Facebook },
         { name: "Instagram", href: "https://www.instagram.com/foreach_4h/", icon: InstagramIcon },
         { name: "WhatsApp", href: "https://wa.me/966000000000", icon: AiOutlineWhatsApp },
+        { name: "Twitter", href: "https://x.com", icon: AiOutlineTwitter },
+        { name: "TikTok", href: "https://tiktok.com", icon: FaTiktok },
+        { name: "Snapchat", href: "https://snapchat.com", icon: FaSnapchatGhost },
+        { name: "Telegram", href: "https://t.me", icon: FaTelegramPlane },
     ];
 
     return (
@@ -44,7 +51,7 @@ export default function SiteFooter() {
                 </Link>
 
                 {/* Social links */}
-                <div className="flex gap-6">
+                <div className="flex flex-wrap justify-center gap-4">
                     {socials.map(({ name, href, icon: Icon }) => (
                         <Link
                             key={name}
@@ -53,7 +60,7 @@ export default function SiteFooter() {
                             aria-label={name}
                             className="hover:text-accent transition"
                         >
-                            <Icon className="h-8 w-8" />
+                            <Icon className="h-7 w-7 sm:h-8 sm:w-8" />
                         </Link>
                     ))}
                 </div>

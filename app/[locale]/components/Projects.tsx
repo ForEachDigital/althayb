@@ -26,7 +26,7 @@ export default function HomeProjectsSection() {
                 <div className="mt-12 text-center">
                     <Link
                         href={`/${locale}/projects`}
-                        className="inline-block text-2xl text-primary underline-offset-4 transition-colors hover:text-accent hover:underline"
+                        className="inline-block text-3xl text-primary font-montserrat font-semibold underline underline-offset-4 transition-colors hover:text-accent hover:underline"
                     >
                         {t("viewAll")}
                     </Link>

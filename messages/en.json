@@ -68,6 +68,9 @@
     "send": "Send",
     "success": "Your message has been sent! We will reply shortly."
   },
+  "Partners": {
+    "title": "Successful Partners"
+  },
   "navbar": {
     "home": "Home",
     "about": "About Us",

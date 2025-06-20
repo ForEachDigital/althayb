@@ -1,9 +1,8 @@
 "use client";
 import React, {useEffect, useState} from "react";
 import Image from "next/image";
-import {useTranslations, useLocale} from "next-intl";
+import {useLocale, useTranslations} from "next-intl";
 import Link from "next/link";
-import {Button} from "@/components/Button";
 
 export default function Hero() {
     const [hasMounted, setHasMounted] = useState(false);
@@ -24,7 +23,7 @@ export default function Hero() {
             {hasMounted && (
                 <video
                     className="absolute inset-0 h-full w-full object-cover"
-                    src="/hero.mp4"
+                    src="/hero2.mp4"
                     autoPlay
                     muted
                     loop
