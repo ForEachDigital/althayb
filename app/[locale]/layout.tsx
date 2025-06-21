@@ -12,6 +12,7 @@ import React from "react";
 import Header from "@/app/[locale]/components/Header";
 import AOSInit from "@/components/_components/AOSInit";
 import SiteFooter from "@/app/[locale]/components/SiteFooter";
+import FloatingContact from "@/app/[locale]/components/FloatingContact";
 
 /* ------------ global SEO ------------- */
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
@@ -54,6 +55,14 @@ export const metadata: Metadata = {
     },
 };
 
+
+
+const socials = {
+    phone:    "+966 50 123 4567",
+    whatsapp: "+201009051798",
+};
+
+
 export default async function LocaleLayout({
                                                children,
                                                params,
@@ -90,6 +99,10 @@ export default async function LocaleLayout({
             <AOSInit />   {/* Global scroll-animation init */}
             {children}
             <SiteFooter />
+
+            <FloatingContact socials={socials} />
+
+
         </NextIntlClientProvider>
         </body>
         </html>
