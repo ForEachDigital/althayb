@@ -7,6 +7,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import {AiFillCloseSquare, AiOutlineCloseSquare} from "react-icons/ai";
 
 interface Props {
     images: string[];
@@ -76,50 +77,44 @@ export default function Gallery({ images, video }: Props) {
                     modules={[Navigation, Pagination]}
                     navigation
                     pagination={{ clickable: true }}
-
-                    /* NEW → single slide, centered */
                     slidesPerView={1}
-                    centeredSlides
-                    centeredSlidesBounds
-
-                    /* max size & auto-center of whole track */
-                    className="max-h-[90vh] w-full max-w-[90vw] mx-auto"
+                    centeredSlides      // still fine to keep
+                    className="w-full max-w-[90vw] h-[90vh] mx-auto"
                 >
-                    {images.map((src) => (
-                        <SwiperSlide key={src} className="flex flex-row items-center justify-center">
+                    {images.map((src, i) => (
+                        <SwiperSlide           // ① one image only
+                            key={src}
+                            className="flex items-center justify-center"
+                        >
+                            {/* ② responsive width <= wrapper */}
                             <Image
                                 src={src}
-                                alt=""
-                                width={1200}
-                                height={800}
-                                className="max-h-[90vh] w-auto object-contain"
-                            />
-                            <Image
-                                src={src}
-                                alt=""
-                                width={1200}
-                                height={800}
-                                className="max-h-[90vh] w-auto object-contain"
+                                alt={`slide-${i}`}
+                                fill
+                                sizes="(max-width: 768px) 90vw, 1200px"
+                                className="max-w-full rounded-lg max-h-[90vh] w-auto object-contain"
                             />
                         </SwiperSlide>
                     ))}
 
                     {video && (
-                        <SwiperSlide className="flex items-center justify-center">
+                        <SwiperSlide className="flex items-center justify-center basis-full">
+                            {/* you can let it shrink on narrow screens */}
                             <video
                                 src={video}
                                 controls
-                                className="max-h-[90vh] max-w-full rounded-lg"
+                                className="mx-auto max-h-[90vh] max-w-full rounded-lg"
                             />
                         </SwiperSlide>
                     )}
                 </Swiper>
 
+
                 <button
                     onClick={() => setOpen(false)}
                     className="absolute right-4 top-4 text-3xl text-white"
                 >
-                    ✕
+                    <AiOutlineCloseSquare className="w-12 h-12" />
                 </button>
             </Modal>
         </>

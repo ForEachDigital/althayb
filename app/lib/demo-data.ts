@@ -35,12 +35,15 @@ export interface Project {
     description: LocalizedText;
     gallery: string[];
     video?: string;
+    coordinates: { lat: number; lng: number };     // ✅ NEW
+
 }
 
 export const projects: Project[] = [
     /* ───────────────────────── p-01 ───────────────────────── */
     {
         id: "p-01",
+        coordinates: { lat: 24.8265, lng: 46.7152 },     // ✅ NEW
         date: "2024-11-10",
         status: "sold",
         title: {
@@ -83,6 +86,7 @@ Internal streets are “pedestrian-first”, with traffic-calming geometry, moti
         id: "p-02",
         date: "2024-11-10",
         status: "for_sale",
+        coordinates: { lat: 21.5433, lng: 39.1728 },
         title: { ar: "برج السحاب التجاري", en: "Al-Sahab Commercial Tower" },
         location: { ar: "وسط جدة", en: "Downtown Jeddah" },
         shortDescription: {
@@ -114,6 +118,7 @@ Ten high-speed lifts serve tenants, while three basement decks hold **460** cars
     {
         id: "p-03",
         date: "2024-11-10",
+        coordinates: {  lat: 24.4710, lng: 39.6122 },
         status: "under_construction",
         title: { ar: "مركز الريان الطبي", en: "Al-Rayyan Medical Center" },
         location: { ar: "المدينة المنورة", en: "Medina" },
@@ -146,6 +151,7 @@ Healing gardens embrace a biophilic interior courtyard where trees and fountains
         id: "p-04",
         date: "2024-11-10",
         status: "for_sale",
+        coordinates: { lat: 21.5433, lng: 39.1728 },
         title: { ar: "مول البستان", en: "Al-Bustan Mall" },
         location: { ar: "جنوب الرياض", en: "South Riyadh" },
         shortDescription: {
@@ -176,6 +182,7 @@ The 60-m-long “Digital Green Walk” surrounds visitors with LED walls and cei
         id: "p-05",
         date: "2024-11-10",
         status: "sold",
+        coordinates: {lat: 24.6305, lng: 46.7128  },
         title: { ar: "حي الندى الذهبي", en: "Al-Nada Gold District" },
         location: { ar: "الدمام", en: "Dammam" },
         shortDescription: {
@@ -210,6 +217,7 @@ A “Green Footprint” scheme gifts each homeowner a mangrove tree in Jazan; sa
         id: "p-06",
         date: "2024-11-10",
         status: "under_construction",
+        coordinates: {lat: 24.6305, lng: 46.7128  },
         title: { ar: "مجمع التقنية للأعمال", en: "Tech-Hub Business Park" },
         location: { ar: "الخبر", en: "Khobar" },
         shortDescription: {
