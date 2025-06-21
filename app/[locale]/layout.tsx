@@ -18,7 +18,6 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 export const metadata: Metadata = {
     metadataBase: new URL(siteUrl),
-
     /* Title pattern: pageTitle | Althyab Real Estate Development */
     title: {
         default: "Althyab Real Estate Development",
@@ -75,10 +74,17 @@ export default async function LocaleLayout({
         <head>
             {/* Favicon */}
             <link rel="icon" href="/logo.png" type="image/png" sizes="any" />
+
+
+            {/* 👇 NEW – mobile viewport */}
+            <meta name="viewport"
+                  content="width=device-width,initial-scale=1,viewport-fit=cover" />
+
+
             <title>Althyab </title>
         </head>
 
-        <body>
+        <body className="overflow-x-hidden" >
         <NextIntlClientProvider locale={locale}>
             <Header />
             <AOSInit />   {/* Global scroll-animation init */}
