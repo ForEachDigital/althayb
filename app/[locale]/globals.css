@@ -77,3 +77,30 @@ html, body {
   overflow-x: hidden;
 }
 
+
+@keyframes dance {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translateY(-8px) rotate(5deg) scale(1.10);
+  }
+  50% {
+    transform: translateY(4px) rotate(-5deg) scale(1.10);
+  }
+  75% {
+    transform: translateY(-8px) rotate(3deg) scale(1.2);
+  }
+}
+
+.animate-dance {
+  animation: dance 2s infinite ease-in-out;
+}
+@utility hovarable {
+  @apply hover:scale-105 transition-transform duration-200;
+}
+
+
+
+
+
