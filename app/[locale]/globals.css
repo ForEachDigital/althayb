@@ -68,3 +68,12 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+
+/* 🔒 prevent pages from being wider than the device */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
