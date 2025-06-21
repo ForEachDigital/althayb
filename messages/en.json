@@ -66,7 +66,11 @@
     "contact": "Contact",
     "message": "Message",
     "send": "Send",
-    "success": "Your message has been sent! We will reply shortly."
+    "success": "Your message has been sent! We will reply shortly.",
+    "title": "Contact Us",
+    "subtitle": "For bookings or inquiries, reach us directly:",
+    "call": "Call Now",
+    "whatsapp": "WhatsApp"
   },
   "Partners": {
     "title": "Successful Partners"
