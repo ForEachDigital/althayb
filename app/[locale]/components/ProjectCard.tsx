@@ -23,6 +23,11 @@ export default function ProjectCard({ project, index = 0 }: Props) {
                     <div className="absolute left-2 top-2 z-10">
                         <StatusBadge status={project.status} />
                     </div>
+
+                    <div className="absolute right-2 top-2 z-10  bg-primary text-white rounded-full px-3 py-1 text-xl  font-montserrat font-semibold shadow-lg">
+                        {project.location[locale]}
+                    </div>
+
                     <Image
                         src={project.gallery[0]}
                         alt={project.title[locale]}

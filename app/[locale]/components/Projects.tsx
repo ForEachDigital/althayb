@@ -1,32 +1,33 @@
 "use client";
 import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
-import {projects} from "@/app/lib/demo-data";
 import ProjectCard from "@/app/[locale]/components/ProjectCard";
+import {projects} from "@/app/lib/demo-data";
 
 export default function HomeProjectsSection() {
     const t = useTranslations("Projects");
-    const locale = useLocale();
+    const locale = useLocale() as "ar" | "en";
 
     return (
         <section id="projects" className="bg-gray-50 py-20">
-            <div className="container mx-auto max-w-6xl px-4">
-                <h2 className="mb-12 text-center text-4xl font-bold text-primary font-palanquin">
+            {/* full-width wrapper */}
+            <div className="w-full px-4">
+                <h2 className="mb-12 text-center font-palanquin text-4xl font-bold text-primary">
                     {t("title")}
                 </h2>
 
-                {/* — cards — */}
-                <div className="space-y-16">
-                    {projects.slice(0, 4).map((p, i) => (
-                        <ProjectCard key={p.id} project={p} index={i}  />
+                {/* exactly 3 cards */}
+                <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
+                    {projects.slice(0, 3).map((p, i) => (
+                        <ProjectCard key={p.id} project={p} index={i} />
                     ))}
                 </div>
 
-                {/* — “view all” text button — */}
+                {/* view-all link */}
                 <div className="mt-12 text-center">
                     <Link
                         href={`/${locale}/projects`}
-                        className="inline-block text-3xl text-primary font-montserrat font-semibold underline underline-offset-4 transition-colors hover:text-accent hover:underline"
+                        className="inline-block font-montserrat text-3xl font-semibold text-primary underline underline-offset-4 transition-colors hover:text-accent"
                     >
                         {t("viewAll")}
                     </Link>
