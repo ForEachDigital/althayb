@@ -13,6 +13,8 @@ import Header from "@/app/[locale]/components/Header";
 import AOSInit from "@/components/_components/AOSInit";
 import SiteFooter from "@/app/[locale]/components/SiteFooter";
 import FloatingContact from "@/app/[locale]/components/FloatingContact";
+import { Analytics } from "@vercel/analytics/next"
+
 
 /* ------------ global SEO ------------- */
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
@@ -97,6 +99,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider locale={locale}>
             <Header />
             <AOSInit />   {/* Global scroll-animation init */}
+            <Analytics/>
             {children}
             <SiteFooter />
 
