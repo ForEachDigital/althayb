@@ -52,7 +52,8 @@
     "pageTitle": "All Projects",
     "ongoing": "Ongoing",
     "completed": "Completed",
-    "viewAll": "View All Projects"
+    "viewAll": "View All Projects",
+    "internalPhotos":"Project Interiors"
   },
   "Footer": {
     "rights": "© {year} Althyab. All rights reserved."

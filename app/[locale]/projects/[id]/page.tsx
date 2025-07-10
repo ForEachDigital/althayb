@@ -5,6 +5,9 @@ import StatusBadge from "@/app/[locale]/projects/StatusBadge";
 import {projects} from "@/app/lib/demo-data";
 import ProjectMap from "@/app/[locale]/projects/ProjectMap";
 import ContactActions from "@/app/[locale]/projects/ContactActions";
+import InternalPhotos from "@/app/[locale]/projects/InternalPhotos";
+import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 
 /* params arrives as Promise because of outer [locale] */
 interface Params { locale: string; id: string }
@@ -52,9 +55,32 @@ export default async function ProjectDetails({
                     }}
                 />
 
+                <ReactMarkdown
+                    rehypePlugins={[rehypeRaw]}
+                    components={{
+                        // نضيف Tailwind أو أي تنسيق إضافي للـ<strong>
+                        strong: ({...props}) =>
+                            <strong className="font-bold text-xl" {...props} />,
+                        p: ({...props}) =>
+                            <p className=" leading-relaxed  text-xl text-gray-700 " {...props} />,
+                        ul: ({...props}) =>
+                            <ul className="list-disc list-inside" {...props} />,
+                        li: ({...props}) =>
+                            <li className="leading-relaxed text-xl text-gray-700" {...props} />,
+                        a: ({...props}) =>
+                            <a className="text-primary hover:underline" {...props} />,
+                        br: ({...props}) =>
+                            <br className="my-2" {...props} />,
+                    }}
+                >
+                    {project.description[mylocale]}
+                </ReactMarkdown >
+
             </section>
 
+            <InternalPhotos images={project.internalPhotos} />
             {/* Dynamic map */}
+
             <ProjectMap coordinates={project.coordinates} />
 
             <ContactActions

@@ -34,6 +34,8 @@ export interface Project {
     shortDescription: LocalizedText;
     description: LocalizedText;
     gallery: string[];
+    internalPhotos: string[];           // ✅ NEW
+
     video?: string;
     coordinates: { lat: number; lng: number };     // ✅ NEW
 
@@ -79,6 +81,13 @@ Internal streets are “pedestrian-first”, with traffic-calming geometry, moti
       `,
         },
         gallery: ["/projects/fake1.jpg", "/projects/fake2.jpg", "/projects/fake3.jpg"],
+        internalPhotos: [
+            "/projects/internalPhotos1.jpg",
+            "/projects/internalPhotos2.jpg",
+            "/projects/internalPhotos3.jpg",
+            "/projects/internalPhotos4.jpg"
+        ]
+
     },
 
     /* ───────────────────────── p-02 ───────────────────────── */
@@ -111,6 +120,12 @@ Ten high-speed lifts serve tenants, while three basement decks hold **460** cars
       `,
         },
         gallery: ["/projects/fake4.jpg"],
+        internalPhotos: [
+            "/projects/internalPhotos1.jpg",
+            "/projects/internalPhotos2.jpg",
+            "/projects/internalPhotos3.jpg",
+            "/projects/internalPhotos4.jpg"
+        ],
         video: "/hero.mp4",
     },
 
@@ -144,6 +159,12 @@ Healing gardens embrace a biophilic interior courtyard where trees and fountains
       `,
         },
         gallery: ["/projects/fake5.jpg"],
+        internalPhotos: [
+            "/projects/internalPhotos1.jpg",
+            "/projects/internalPhotos2.jpg",
+            "/projects/internalPhotos3.jpg",
+            "/projects/internalPhotos4.jpg"
+        ]
     },
 
     /* ───────────────────────── p-04 ───────────────────────── */
@@ -175,6 +196,12 @@ The 60-m-long “Digital Green Walk” surrounds visitors with LED walls and cei
       `,
         },
         gallery: ["/projects/fake6.jpg", "/projects/fake2.jpg"],
+        internalPhotos: [
+            "/projects/internalPhotos1.jpg",
+            "/projects/internalPhotos2.jpg",
+            "/projects/internalPhotos3.jpg",
+            "/projects/internalPhotos4.jpg"
+        ]
     },
 
     /* ───────────────────────── p-05 ───────────────────────── */
@@ -210,6 +237,12 @@ A “Green Footprint” scheme gifts each homeowner a mangrove tree in Jazan; sa
       `,
         },
         gallery: ["/projects/fake3.jpg", "/projects/fake5.jpg"],
+        internalPhotos: [
+            "/projects/internalPhotos1.jpg",
+            "/projects/internalPhotos2.jpg",
+            "/projects/internalPhotos3.jpg",
+            "/projects/internalPhotos4.jpg"
+        ]
     },
 
     /* ───────────────────────── p-06 ───────────────────────── */
@@ -242,6 +275,12 @@ Amenities span short-stay hotel suites, a 24-hour fitness centre and **14** caf�
       `,
         },
         gallery: ["/projects/fake1.jpg", "/projects/fake6.jpg"],
+        internalPhotos: [
+            "/projects/internalPhotos1.jpg",
+            "/projects/internalPhotos2.jpg",
+            "/projects/internalPhotos3.jpg",
+            "/projects/internalPhotos4.jpg"
+        ],
     },
 ];
 
