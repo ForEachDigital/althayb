@@ -11,7 +11,7 @@ export default function Partners() {
     const t = useTranslations("Partners");
 
     return (
-        <section id="partners" className="py-16">
+        <section id="partners" className="py-16 bg-gray-50">
             <div className="container mx-auto max-w-5xl px-4 text-center">
                 <h2 className="mb-8 text-3xl font-semibold font-montserrat text-primary-600">
                     {t("title")}

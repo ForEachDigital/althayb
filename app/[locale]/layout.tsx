@@ -14,8 +14,9 @@ import AOSInit from "@/components/_components/AOSInit";
 import SiteFooter from "@/app/[locale]/components/SiteFooter";
 import FloatingContact from "@/app/[locale]/components/FloatingContact";
 import { Analytics } from "@vercel/analytics/next";
+import {socials} from "@/app/lib/demo-data";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://althyab.com";
 
 export const metadata: Metadata = {
     metadataBase: new URL(siteUrl),
@@ -54,10 +55,6 @@ export const metadata: Metadata = {
     },
 };
 
-const socials = {
-    phone: "+966 50 123 4567",
-    whatsapp: "+201009051798",
-};
 
 export default async function LocaleLayout({
                                                children,

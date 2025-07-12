@@ -14,7 +14,7 @@ export default function StatusBadge({ status }: { status: ProjectStatus }) {
     const t = useTranslations("Status");
     return (
         <span
-            className={`${style[status]} rounded-full px-3 py-1 text-2xl  font-montserrat font-semibold shadow-lg`}
+            className={`${style[status]} rounded-full px-3 py-1 text-xl  font-montserrat font-semibold shadow-lg`}
         >
       {t(status)}
     </span>

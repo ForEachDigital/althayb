@@ -22,7 +22,7 @@ export default async function ProjectDetails({
     if (!project) notFound();
 
     return (
-        <main className="container mx-auto max-w-5xl px-4 py-24 space-y-14">
+        <main className="container mx-auto max-w-5xl px-4 py-24 space-y-14 bg-gray-50">
             {/* gallery */}
             <Gallery images={project.gallery} video={project.video} />
 

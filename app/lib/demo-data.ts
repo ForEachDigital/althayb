@@ -18,6 +18,12 @@ export const stats = {
     totalAreaSoldM2: 25_000_000        // 25 M m²
 };
 
+export const socials = {
+    phone: "+966 50 123 4567",
+    whatsapp: "+201009051798",
+};
+
+
 export type ProjectStatus = "for_sale" | "under_construction" | "sold";
 
 export interface LocalizedText {
