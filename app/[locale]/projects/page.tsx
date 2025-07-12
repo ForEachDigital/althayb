@@ -9,7 +9,7 @@ export default function ProjectsPage() {
     const t = useTranslations("Projects");
 
     return (
-        <main className="bg-gray-50 py-20">
+        <main className="bg-gray-50 py-30">
             {/* full-width wrapper (no max-w) */}
             <div className="w-full px-4">
                 <h1 className="mb-12 text-center font-palanquin text-4xl font-bold text-primary">

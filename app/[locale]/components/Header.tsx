@@ -54,7 +54,7 @@ export default function Header() {
 
     /* ── styles (mobile bar is solid; desktop gets blur) ─ */
     const base =
-        "fixed inset-x-0 top-0 z-20 flex items-center h-16 md:h-18 transition-all duration-300";
+        "fixed inset-x-0 top-0 z-20 flex items-center h-25 md:h-20 transition-all duration-300";
     const mobile = "bg-white text-primary shadow-lg";
     const desktop = isHome
         ? scrolled
@@ -69,7 +69,7 @@ export default function Header() {
                 <div className="container mx-auto flex w-full items-center justify-between px-4 py-2 md:py-3">
                     {/* Logo */}
                     <Link href={`/${locale}`} className=" ">
-                        <Image src="/ic_header_althyab.svg" width={200} height={100} alt="Althyab Logo" />
+                        <Image src="/ic_header_althyab.svg" width={250} height={150} alt="Althyab Logo" />
                     </Link>
 
                     {/* Desktop links */}
