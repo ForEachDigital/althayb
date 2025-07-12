@@ -291,42 +291,60 @@ Amenities span short-stay hotel suites, a 24-hour fitness centre and **14** caf√
 ];
 
 // app/lib/demo-data.ts
+//
+// export const partners = [
+//     {
+//         id: "greenpipes",
+//         name: "Green Pipes",
+//         logo: "/partners/green_pipes.png",
+//         url: "#",
+//     },
+//     {
+//         id: "foreach",
+//         name: "Foreach",
+//         logo: "/partners/foreach_logo.png",
+//         url: "#",
+//     },
+//     {
+//         id: "municipality",
+//         name: "Municipality",
+//         logo: "/partners/municipality.svg",
+//         url: "#",
+//     },
+//     {
+//         id: "malath",
+//         name: "Malath",
+//         logo: "/partners/malath.svg",
+//         url: "#",
+//     },
+//     {
+//         id: "alrajhy",
+//         name: "Al Rajhy Bank",
+//         logo: "/partners/bank_elrajhy.svg",
+//         url: "#",
+//     },
+//     {
+//         id: "alfanar",
+//         name: "Alfanar",
+//         logo: "/partners/alfanar-logo.svg",
+//         url: "#",
+//     },
+// ];
 
+/* ------------------------------------------------------------------
+   Only the partners array was changed; all other exports unchanged
+------------------------------------------------------------------ */
 export const partners = [
-    {
-        id: "greenpipes",
-        name: "Green Pipes",
-        logo: "/partners/green_pipes.png",
-        url: "#",
-    },
-    {
-        id: "foreach",
-        name: "Foreach",
-        logo: "/partners/foreach_logo.png",
-        url: "#",
-    },
-    {
-        id: "municipality",
-        name: "Municipality",
-        logo: "/partners/municipality.svg",
-        url: "#",
-    },
-    {
-        id: "malath",
-        name: "Malath",
-        logo: "/partners/malath.svg",
-        url: "#",
-    },
-    {
-        id: "alrajhy",
-        name: "Al Rajhy Bank",
-        logo: "/partners/bank_elrajhy.svg",
-        url: "#",
-    },
-    {
-        id: "alfanar",
-        name: "Alfanar",
-        logo: "/partners/alfanar-logo.svg",
-        url: "#",
-    },
+    { id: "pr1", logo: "/partners/pr1.svg" },
+    { id: "pr2", logo: "/partners/pr2.svg" },
+    { id: "pr3", logo: "/partners/pr3.svg" },
+    { id: "pr4", logo: "/partners/pr4.svg" },
+    { id: "foreach", logo: "/foreach_logo.png" },
+    { id: "pr5", logo: "/partners/pr5.svg" },
+    { id: "pr6", logo: "/partners/pr6.svg" },
+    { id: "pr7", logo: "/partners/pr7.svg" },
+    { id: "pr8", logo: "/partners/pr8.svg" },
+    { id: "pr9", logo: "/partners/pr9.svg" },
 ];
+
+

@@ -11,9 +11,9 @@ export default function Partners() {
     const t = useTranslations("Partners");
 
     return (
-        <section id="partners" className="py-16 bg-gray-50">
+        <section id="partners" className="bg-gray-50 py-16">
             <div className="container mx-auto max-w-5xl px-4 text-center">
-                <h2 className="mb-8 text-3xl font-semibold font-montserrat text-primary-600">
+                <h2 className="mb-8 font-montserrat text-3xl font-semibold text-primary-600">
                     {t("title")}
                 </h2>
 
@@ -31,22 +31,17 @@ export default function Partners() {
                     spaceBetween={32}
                     className="partners-carousel"
                 >
-                    {partners.map(({ id, name, logo, url }) => (
+                    {partners.map(({ id, logo }) => (
                         <SwiperSlide key={id} className="flex justify-center">
-                            <a
-                                href={url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="relative h-24 w-32 sm:h-28 sm:w-40 opacity-80 transition-opacity hover:opacity-100"
-                            >
+                            <div className="relative h-24 w-32 sm:h-28 sm:w-40 opacity-80 transition-opacity hover:opacity-100">
                                 <Image
                                     src={logo}
-                                    alt={name}
+                                    alt="partner logo"
                                     fill
                                     className="object-contain"
                                     sizes="160px"
                                 />
-                            </a>
+                            </div>
                         </SwiperSlide>
                     ))}
                 </Swiper>
