@@ -11,12 +11,6 @@ export default function Hero() {
 
     useEffect(() => setHasMounted(true), []);
 
-    /* Smooth-scroll to #projects */
-    const handleScroll = (e: React.MouseEvent) => {
-        e.preventDefault();
-        const el = document.querySelector("#projects");
-        el?.scrollIntoView({behavior: "smooth", block: "start"});
-    };
 
     return (
         <section id="hero" className="relative h-screen w-full overflow-hidden">
@@ -38,8 +32,8 @@ export default function Hero() {
                     src="/althyab_white.svg"
                     alt="Althyab"
                     width={400}
-                    height={350}
-                        className="object-contain relative block h-100 w-100 shrink-0"
+                    height={250}
+                        className="object-contain relative block h-60 w-100 shrink-0"
                     priority
                 />
 
