@@ -15,7 +15,7 @@ export default function Goals() {
     const items = t.raw("list") as string[];         // array from JSON
 
     return (
-        <section id="goals" className="bg-gray-50 py-20">
+        <section id="goals" aria-label="Our Vision and Goals" className="bg-gray-50 py-20">
             <div className="container mx-auto max-w-6xl px-4">
                 <h2 className="mb-10 text-center text-4xl font-bold text-primary font-montserrat">
                     {t("title")}

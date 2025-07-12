@@ -9,7 +9,7 @@ export default function HomeProjectsSection() {
     const locale = useLocale() as "ar" | "en";
 
     return (
-        <section id="projects" className="bg-gray-50 py-20">
+        <section id="projects" aria-label="Featured Projects" className="bg-gray-50 py-20">
             {/* full-width wrapper */}
             <div className="w-full px-4">
                 <h2 className="mb-12 text-center font-palanquin text-4xl font-bold text-primary">

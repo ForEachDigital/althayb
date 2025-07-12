@@ -13,7 +13,7 @@ export default function Hero() {
 
 
     return (
-        <section id="hero" className="relative h-screen w-full overflow-hidden">
+        <section id="hero" aria-label="Hero Video Banner" className="relative h-screen w-full overflow-hidden">
             {hasMounted && (
                 <video
                     className="absolute inset-0 h-full w-full object-cover"
