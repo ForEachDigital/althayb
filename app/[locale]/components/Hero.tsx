@@ -37,8 +37,8 @@ export default function Hero() {
                 <Image
                     src="/althyab_white.svg"
                     alt="Althyab"
-                    width={500}
-                    height={500}
+                    width={400}
+                    height={350}
                         className="object-contain relative block h-100 w-100 shrink-0"
                     priority
                 />
