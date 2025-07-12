@@ -40,9 +40,9 @@ export default function SiteFooter() {
 
             <div className="container mx-auto flex flex-col items-center gap-6 px-4 py-12">
                 {/* Logo */}
-                <Link href="#hero" className="relative block h-30 w-36">
+                <Link href="#hero" className="relative block h-40 w-56">
                     <Image
-                        src="/logo.svg"
+                        src="/althyab_white.svg"
                         alt="Althyab"
                         fill
                         className="object-contain"

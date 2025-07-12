@@ -35,11 +35,11 @@ export default function Hero() {
             <div
                 className="relative z-10 flex h-full flex-col items-center justify-center bg-black/50 px-4 text-center text-white">
                 <Image
-                    src="/ic_header_althyab.svg"
+                    src="/althyab_white.svg"
                     alt="Althyab"
-                    width={400}
-                    height={400}
-                        className="object-contain relative block h-80 w-80 shrink-0"
+                    width={500}
+                    height={500}
+                        className="object-contain relative block h-100 w-100 shrink-0"
                     priority
                 />
 

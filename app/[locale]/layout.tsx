@@ -13,43 +13,40 @@ import Header from "@/app/[locale]/components/Header";
 import AOSInit from "@/components/_components/AOSInit";
 import SiteFooter from "@/app/[locale]/components/SiteFooter";
 import FloatingContact from "@/app/[locale]/components/FloatingContact";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 
-
-/* ------------ global SEO ------------- */
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 export const metadata: Metadata = {
     metadataBase: new URL(siteUrl),
-    /* Title pattern: pageTitle | Althyab Real Estate Development */
+    /* Title pattern: pageTitle | Althyab Global Company */
     title: {
-        default: "Althyab Real Estate Development",
-        template: "%s | Althyab Real Estate Development",
+        default: "Althyab Global Company",
+        template: "%s | Althyab Global Company",
     },
 
     description:
-        "Althyab is a Saudi real-estate developer building modern residential and commercial communities across the Kingdom.",
+        "Althyab Global Company is a Saudi investment firm leading innovative residential and commercial development across the Kingdom.",
 
     icons: {
-        icon: "/logo.png",
+        icon: "/althyab_fav.svg",
     },
 
-
     openGraph: {
-        title: "Althyab Real Estate Development",
+        title: "Althyab Global Company",
         description:
-            "Discover Althyab's innovative residential and commercial projects across Saudi Arabia.",
+            "Discover Althyab’s innovative investment and real estate projects across Saudi Arabia.",
         url: siteUrl,
-        siteName: "Althyab",
+        siteName: "Althyab Global Company",
         locale: "ar_SA",
         type: "website",
     },
 
     twitter: {
         card: "summary_large_image",
-        title: "Althyab Real Estate Development",
+        title: "Althyab Global Company",
         description:
-            "Building tomorrow’s integrated communities in Saudi Arabia.",
+            "Shaping the future of investment and development in Saudi Arabia.",
     },
 
     alternates: {
@@ -57,55 +54,41 @@ export const metadata: Metadata = {
     },
 };
 
-
-
 const socials = {
-    phone:    "+966 50 123 4567",
+    phone: "+966 50 123 4567",
     whatsapp: "+201009051798",
 };
-
 
 export default async function LocaleLayout({
                                                children,
                                                params,
                                            }: {
     children: React.ReactNode;
-    /* params is a Promise under dynamic [locale] segment */
     params: Promise<{ locale: string }>;
 }) {
-    /* Resolve locale */
     const { locale } = await params;
     if (!hasLocale(routing.locales, locale)) notFound();
-
-    /* Ensure server components render in the correct locale */
     setRequestLocale(locale);
 
     return (
         <html dir={locale === "ar" ? "rtl" : "ltr"} lang={locale}>
         <head>
-            {/* Favicon */}
-            <link rel="icon" href="/logo.png" type="image/png" sizes="any" />
-
-
-            {/* 👇 NEW – mobile viewport */}
-            <meta name="viewport"
-                  content="width=device-width,initial-scale=1,viewport-fit=cover" />
-
-
-            <title>Althyab </title>
+            <link rel="icon" href="/althyab_logo.svg" type="image/png" sizes="any" />
+            <meta
+                name="viewport"
+                content="width=device-width,initial-scale=1,viewport-fit=cover"
+            />
+            <title>Althyab Global Company</title>
         </head>
 
-        <body className="overflow-x-hidden" >
+        <body className="overflow-x-hidden">
         <NextIntlClientProvider locale={locale}>
             <Header />
-            <AOSInit />   {/* Global scroll-animation init */}
-            <Analytics/>
+            <AOSInit />
+            <Analytics />
             {children}
             <SiteFooter />
-
             <FloatingContact socials={socials} />
-
-
         </NextIntlClientProvider>
         </body>
         </html>
