@@ -31,9 +31,9 @@ export default function Hero() {
                 <Image
                     src="/athyab_portrait.svg"
                     alt="Althyab"
-                    width={500}
-                    height={500}
-                        className="object-contain relative z-10 shadow-2xl block h-80 w-100 shrink-0"
+                    width={300}
+                    height={300}
+                        className="object-contain relative z-10 shadow-2xl block h-60 w-100 shrink-0"
                     priority
                 />
 
