@@ -29,15 +29,15 @@ export default function Hero() {
             <div
                 className="relative z-10 flex h-full flex-col items-center justify-center bg-black/50 px-4 text-center text-white">
                 <Image
-                    src="/althyab_white.svg"
+                    src="/athyab_portrait.svg"
                     alt="Althyab"
-                    width={400}
-                    height={250}
-                        className="object-contain relative block h-60 w-100 shrink-0"
+                    width={450}
+                    height={450}
+                        className="object-contain relative block h-70 w-100 shrink-0"
                     priority
                 />
 
-                <h1 className="mb-4 text-4xl font-bold font-montserrat md:text-6xl">{t("headline")}</h1>
+                <h1 className="mb-4 text-4xl font-bold mt-5 font-montserrat md:text-4xl">{t("headline")}</h1>
                 <p className="mb-10 max-w-xl text-lg  font-montserrat md:text-2xl">{t("subheading")}</p>
 
                 {/* CTA buttons --------------------------------------------------- */}
