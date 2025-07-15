@@ -29,11 +29,11 @@ export default function Hero() {
             <div
                 className="relative z-10 flex h-full flex-col items-center justify-center bg-black/50 px-4 text-center text-white">
                 <Image
-                    src="/athyab_portrait.svg"
+                    src="/thyab_portrait.svg"
                     alt="Althyab"
                     width={260}
-                    height={300}
-                        className="object-contain relative z-10 shadow-2xl block h-60 w-100 shrink-0"
+                    height={230}
+                        className="object-contain relative block h-60 w-100 shrink-0"
                     priority
                 />
 
