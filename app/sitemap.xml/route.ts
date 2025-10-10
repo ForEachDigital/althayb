@@ -1,62 +1,66 @@
+// app/sitemap/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import { projects } from "@/app/lib/demo-data";
 
-/**
- * Your public URL. Keep it in an env-var so
- * Vercel Preview → Production switch is automatic.
- *
- * NEXT_PUBLIC_SITE_URL=https://althyab.com
- */
 const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://althyab.com";
-
-/** Locales you ship (match folder names under /app) */
 const LOCALES = ["en", "ar"];
+const STATIC = ["", "projects"]; // "" === home
+export const revalidate = 86400; // 24h
 
-/** Static pages you really want indexed  (empty string === "/") */
-const STATIC = ["", "projects"];
+type UrlItem = { loc: string; changefreq: "weekly" | "monthly" };
 
-/** How long search engines may cache the sitemap (1 day) */
-export const revalidate = 86400; // 24 h in seconds
+function alternatesFor(loc: string) {
+    // loc is like https://.../en or /ar or /en/projects
+    const path = loc.replace(SITE, "");        // e.g., /en or /ar/projects/123
+    const pathNoLocale = path.replace(/^\/(en|ar)/, ""); // strip leading /en|/ar
+    const hrefEn = `${SITE}/en${pathNoLocale || ""}`;
+    const hrefAr = `${SITE}/ar${pathNoLocale || ""}`;
+    const hrefDefault = SITE + (pathNoLocale || "");
+    return [
+        { hreflang: "en", href: hrefEn },
+        { hreflang: "ar", href: hrefAr },
+        { hreflang: "x-default", href: hrefDefault },
+    ];
+}
+
+function urlNode(u: UrlItem) {
+    const alts = alternatesFor(u.loc)
+        .map(a => `    <xhtml:link rel="alternate" hreflang="${a.hreflang}" href="${a.href}"/>`)
+        .join("\n");
+    return `  <url>
+    <loc>${u.loc}</loc>
+${alts}
+    <changefreq>${u.changefreq}</changefreq>
+    <lastmod>${new Date().toISOString()}</lastmod>
+  </url>`;
+}
 
 export async function GET(_req: NextRequest) {
-    /* ---- build the URL list ------------------------------------------- */
+    const urls: UrlItem[] = [];
 
-    const urls: { loc: string; changefreq: string }[] = [];
-
-    /** add every static page for every locale */
+    // static pages (each locale)
     for (const locale of LOCALES) {
         for (const slug of STATIC) {
-            urls.push({
-                loc: `${SITE}/${locale}/${slug}`,
-                changefreq: "weekly",
-            });
+            const tail = slug ? `/${slug}` : "";
+            urls.push({ loc: `${SITE}/${locale}${tail}`, changefreq: "weekly" });
         }
     }
 
-    /** dynamic project pages (again for each locale)  */
+    // dynamic project pages (each locale)
     for (const locale of LOCALES) {
         projects.forEach((p) => {
             urls.push({
-                loc: `${SITE}/${locale}/projects/${p.id}`, // change to p.slug if you have nice slugs
+                loc: `${SITE}/${locale}/projects/${p.id}`,
                 changefreq: "monthly",
             });
         });
     }
 
-    /* ---- XML output ---------------------------------------------------- */
-
     const xml =
         `<?xml version="1.0" encoding="UTF-8"?>\n` +
-        `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
-        urls
-            .map(
-                (u) => `  <url>
-    <loc>${u.loc}</loc>
-    <changefreq>${u.changefreq}</changefreq>
-    <lastmod>${new Date().toISOString()}</lastmod>
-  </url>`
-            )
-            .join("\n") +
+        `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n` +
+        `        xmlns:xhtml="http://www.w3.org/1999/xhtml">\n` +
+        urls.map(urlNode).join("\n") +
         `\n</urlset>`;
 
     return new NextResponse(xml, {
