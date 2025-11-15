@@ -13,7 +13,7 @@ export default function Partners() {
     return (
         <section id="partners" className="bg-gray-50 py-16">
             <div className="container mx-auto max-w-5xl px-4 text-center">
-                <h2 className="mb-8 font-montserrat text-3xl font-semibold text-primary-600">
+                <h2 className="mb-8 font-montserrat text-3xl font-semibold text-primary">
                     {t("title")}
                 </h2>
 

@@ -19,8 +19,8 @@ export const stats = {
 };
 
 export const socials = {
-    phone: "+966 50 123 4567",
-    whatsapp: "+201009051798",
+    phone: "+966 59 990 4086",
+    whatsapp: "+966 59 990 4086",
 };
 
 

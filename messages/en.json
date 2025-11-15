@@ -110,6 +110,15 @@
       "title": "Althyab Global Company — Saudi Real Estate & Investment",
       "description": "A leading Saudi investment and real-estate development firm delivering residential and commercial projects aligned with Vision 2030."
     }
-  }
+  },
+  "ceo": {
+  "badge": "Message from the CEO",
+  "name": "Eng. Hebas Jalal Al-Gharmoul",
+  "title": "Chief Executive Officer (CEO)",
+  "message": "At Althyab Global Investment Company, we place our clients and investors at the heart of our vision, working to transform their aspirations into tangible investment opportunities that deliver true value and distinction.\n\nOur goal is to be an active partner in shaping the future of real estate investment in the Kingdom of Saudi Arabia by offering innovative solutions and exceptional projects that meet market expectations and align with the ambitions of Saudi Vision 2030.\n\nOur commitment to quality, transparency, and building trust forms the foundation upon which we create sustainable success and long-term partnerships, contributing to the growth of the national economy and leaving a positive impact on the community as a whole.",
+  "quote": "Quality, transparency, and trust are the pillars of our partnership."
+}
+
+
 
 }

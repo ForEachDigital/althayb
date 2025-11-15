@@ -7,6 +7,7 @@ import Goals    from "./components/Goals";
 import Stats    from "./components/Stats";
 import Projects from "@/app/[locale]/components/Projects";
 import Partners from "./components/Partners";
+import CeoSection from "@/app/[locale]/components/CeoSection";
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://althyab.com";
 
@@ -89,6 +90,8 @@ export default async function Home() {
             <Goals />
             <Stats />
             <Projects />
+            <CeoSection />
+
             <Partners />
         </main>
     );

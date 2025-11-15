@@ -16,7 +16,7 @@ export default function SiteFooter() {
     const socials = [
         { name: "Facebook", href: "https://www.facebook.com/profile.php?id=61576235373156", icon: Facebook },
         { name: "Instagram", href: "https://www.instagram.com/foreach_4h/", icon: InstagramIcon },
-        { name: "WhatsApp", href: "https://wa.me/966000000000", icon: AiOutlineWhatsApp },
+        { name: "WhatsApp", href: "https://wa.me/+966599904086", icon: AiOutlineWhatsApp },
         { name: "Twitter", href: "https://x.com", icon: AiOutlineTwitter },
         { name: "TikTok", href: "https://tiktok.com", icon: FaTiktok },
         { name: "Snapchat", href: "https://snapchat.com", icon: FaSnapchatGhost },
