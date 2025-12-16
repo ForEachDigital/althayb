@@ -69,6 +69,35 @@ export default function SiteFooter() {
                 <p className="text-center text-sm opacity-85">
                     {t("rights", { year })}
                 </p>
+
+                {/* Developer Credit */}
+                <div className="group relative mt-2">
+                    <div className="flex items-center justify-center gap-2 text-xs opacity-60 transition-all duration-300 group-hover:opacity-100">
+                        <span>Crafted with</span>
+                        <span className="relative inline-flex h-4 w-4">
+                            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-0 transition-opacity duration-500 group-hover:opacity-75" />
+                            <svg 
+                                className="relative h-4 w-4 text-accent transition-transform duration-300 group-hover:scale-125 group-hover:animate-pulse" 
+                                fill="currentColor" 
+                                viewBox="0 0 20 20"
+                            >
+                                <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
+                            </svg>
+                        </span>
+                        <span>by</span>
+                        <Link 
+                            href="https://foreachtech.com" 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="relative font-semibold text-accent transition-all duration-300 hover:text-white"
+                        >
+                            <span className="relative z-10">Foreach</span>
+                            <span className="absolute inset-x-0 -bottom-0.5 h-px origin-left scale-x-0 bg-accent transition-transform duration-300 group-hover:scale-x-100" />
+                            {/* Sparkle effect on hover */}
+                            <span className="pointer-events-none absolute -right-1 -top-1 h-1 w-1 rounded-full bg-accent opacity-0 transition-opacity duration-300 group-hover:animate-ping group-hover:opacity-100" />
+                        </Link>
+                    </div>
+                </div>
             </div>
         </footer>
     );
