@@ -56,7 +56,9 @@
     "internalPhotos":"Project Interiors"
   },
   "Footer": {
-    "rights": "© {year} Althyab Global Company. All rights reserved."
+    "rights": "© {year} Althyab Global Company. All rights reserved.",
+    "craftedWith": "Crafted with",
+    "by": "by"
   },
   "Contact": {
     "pageTitle": "Contact Us",

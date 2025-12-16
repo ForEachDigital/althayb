@@ -49,12 +49,6 @@ export default async function ProjectDetails({
                 <p className="text-lg font-semibold">
                     {project.shortDescription[mylocale]}
                 </p>
-                <div
-                    dangerouslySetInnerHTML={{
-                        __html: project.description[mylocale],
-                    }}
-                />
-
                 <ReactMarkdown
                     rehypePlugins={[rehypeRaw]}
                     components={{
