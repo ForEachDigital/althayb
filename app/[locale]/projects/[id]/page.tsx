@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Gallery from "@/app/[locale]/projects/Gallery";
 import ProjectMeta from "@/app/[locale]/projects/Meta";
 import StatusBadge from "@/app/[locale]/projects/StatusBadge";
-import {projects} from "@/app/lib/demo-data";
+import { projects, socials } from "@/app/lib/demo-data";
 import ProjectMap from "@/app/[locale]/projects/ProjectMap";
 import ContactActions from "@/app/[locale]/projects/ContactActions";
 import InternalPhotos from "@/app/[locale]/projects/InternalPhotos";
@@ -78,8 +78,8 @@ export default async function ProjectDetails({
             <ProjectMap coordinates={project.coordinates} />
 
             <ContactActions
-                phone="+966555000000"
-                whatsapp="201009051798"
+                phone={socials.phone}
+                whatsapp={socials.whatsapp}
             />
         </main>
     );

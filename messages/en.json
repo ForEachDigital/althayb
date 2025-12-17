@@ -38,14 +38,12 @@
   },
   "Stats": {
     "title": "Our Statistics",
-    "totalSales": "Total sales (last year)",
-    "residentialUnits": "Managed residential units",
-    "commercialUnits": "Managed commercial units",
-    "totalAreaSold": "Total area sold",
-    "salesPrefix": " SAR ",
-    "salesSuffix": " M ",
-    "areaSuffix": " M m² ",
-    "unitSuffix": " units"
+    "projectsCount": "Projects",
+    "landArea": "Land area",
+    "builtArea": "Built-up area",
+    "unitsCount": "Units",
+    "m2Suffix": "m²",
+    "unitSuffix": "units"
   },
   "Projects": {
     "title": "Our Projects",

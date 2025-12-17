@@ -104,9 +104,11 @@ export default function CeoSection() {
                                 </header>
 
                                 {/* Message with Quote Styling */}
-                                <div className="relative pl-4 md:pl-6">
-                                    <div className={`absolute ${isArabic ? 'right-0' : 'left-0'} top-0 h-full w-1 animate-expand-vertical bg-gradient-to-b from-primary via-accent to-transparent`} />
-                                    <p className="text-sm leading-relaxed text-gray-700 md:text-base animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+                                <div className={`relative ${isArabic ? "pr-4 md:pr-6" : "pl-4 md:pl-6"}`}>
+                                    <div
+                                        className={`absolute ${isArabic ? "right-0" : "left-0"} top-0 h-full w-1 animate-expand-vertical bg-gradient-to-b from-primary via-accent to-transparent z-0`}
+                                    />
+                                    <p className="relative z-10 text-sm leading-relaxed text-gray-700 md:text-base animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
                                         {t("message")}
                                     </p>
                                 </div>
