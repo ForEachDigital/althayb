@@ -6,12 +6,14 @@ import Link from "next/link";
 import {BsWhatsapp} from "react-icons/bs";
 
 interface Props {
-    phone: string;               // e.g. "+966555000000"
-    whatsapp: string;            // just the digits "966555000000"
+    phone: string;               // e.g. "+966 59 990 4086"
+    whatsapp: string;            // e.g. "+966 59 990 4086" or "966599904086"
 }
 
 export default function ContactActions({ phone, whatsapp }: Props) {
     const t = useTranslations("Contact");
+    const phoneHref = `tel:${phone.replace(/\s+/g, "")}`;
+    const whatsappHref = `https://wa.me/${whatsapp.replace(/\D/g, "")}`;
 
     return (
         <section id="contact" className="py-16 bg-primary-50">
@@ -22,7 +24,7 @@ export default function ContactActions({ phone, whatsapp }: Props) {
                 <div className="flex flex-wrap justify-center gap-6">
                     {/* Call */}
                     <Link
-                        href={`tel:${phone}`}
+                        href={phoneHref}
                         className="flex items-center gap-2 rounded-full bg-primary px-6 py-3 font-semibold text-white transition hover:bg-primary-700"
                     >
                         <Phone className="h-5 w-5" />
@@ -31,7 +33,7 @@ export default function ContactActions({ phone, whatsapp }: Props) {
 
                     {/* WhatsApp */}
                     <Link
-                        href={`https://wa.me/${whatsapp}`}
+                        href={whatsappHref}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-2 rounded-full bg-green-600 px-6 py-3 font-semibold text-white transition hover:bg-green-700"

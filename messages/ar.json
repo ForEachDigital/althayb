@@ -38,14 +38,12 @@
   },
   "Stats": {
     "title": "إحصائياتنا",
-    "totalSales": "إجمالي المبيعات (السنة الماضية)",
-    "residentialUnits": "عدد الوحدات السكنية المُدارة",
-    "commercialUnits": "عدد الوحدات التجارية المُدارة",
-    "totalAreaSold": "إجمالي المساحات المباعة",
-    "salesPrefix": " ر.س ",
-    "salesSuffix": " مليون ",
-    "areaSuffix": " مليون م²",
-    "unitSuffix": " وحدة"
+    "projectsCount": "عدد المشاريع",
+    "landArea": "مساحة الأراضي",
+    "builtArea": "مساحة البناء",
+    "unitsCount": "عدد الوحدات",
+    "m2Suffix": "م²",
+    "unitSuffix": "وحدة"
   },
   "Projects": {
     "title": "مشاريعنا",

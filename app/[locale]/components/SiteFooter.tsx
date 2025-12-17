@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Facebook, InstagramIcon } from "lucide-react";
 import ForeachCredit from "@/app/[locale]/components/ForeachCredit";
+import { socials as companySocials } from "@/app/lib/demo-data";
 import {
     AiOutlineWhatsApp,
     AiOutlineTwitter,
@@ -14,10 +15,10 @@ export default function SiteFooter() {
     const t = useTranslations("Footer");
     const year = new Date().getFullYear();
 
-    const socials = [
+    const socialLinks = [
         { name: "Facebook", href: "https://www.facebook.com/profile.php?id=61576235373156", icon: Facebook },
         { name: "Instagram", href: "https://www.instagram.com/foreach_4h/", icon: InstagramIcon },
-        { name: "WhatsApp", href: "https://wa.me/+966599904086", icon: AiOutlineWhatsApp },
+        { name: "WhatsApp", href: `https://wa.me/${companySocials.whatsapp.replace(/\D/g, "")}`, icon: AiOutlineWhatsApp },
         { name: "Twitter", href: "https://x.com", icon: AiOutlineTwitter },
         { name: "TikTok", href: "https://tiktok.com", icon: FaTiktok },
         { name: "Snapchat", href: "https://snapchat.com", icon: FaSnapchatGhost },
@@ -53,7 +54,7 @@ export default function SiteFooter() {
 
                 {/* Social links */}
                 <div className="flex flex-wrap justify-center gap-4">
-                    {socials.map(({ name, href, icon: Icon }) => (
+                    {socialLinks.map(({ name, href, icon: Icon }) => (
                         <Link
                             key={name}
                             href={href}

@@ -12,10 +12,10 @@ export const goals = [
 
 // lib/demo-data.ts
 export const stats = {
-    totalSalesLastYear: 750_000_000,   // 750 M SAR
-    residentialUnits: 1_200,
-    commercialUnits: 260,
-    totalAreaSoldM2: 25_000_000        // 25 M m²
+    projectsCount: 17,
+    landAreaM2: 55_000,
+    builtAreaM2: 120_000,
+    unitsCount: 600,
 };
 
 export const socials = {
@@ -138,7 +138,7 @@ At Al Janadriyah, every detail is intentional: a home that’s practical, elegan
     },
     {
         id: "p-03",
-        date: "2024-12-01", // TODO: update to the real date
+        date: "1/7/2025",
         status: "for_sale", // للبيع
         coordinates: { lat: 24.8405072, lng: 46.8765448 }, // from Google Maps pin
         title: { ar: "الشروق", en: "Al Shorouq" },
