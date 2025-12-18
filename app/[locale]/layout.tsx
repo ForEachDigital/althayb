@@ -12,6 +12,7 @@ import SiteFooter from "@/app/[locale]/components/SiteFooter";
 import FloatingContact from "@/app/[locale]/components/FloatingContact";
 import { Analytics } from "@vercel/analytics/next";
 import { socials } from "@/app/lib/demo-data";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://althyab.com";
 
@@ -174,6 +175,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
             <Header />
             <AOSInit />
             <Analytics />
+            <SpeedInsights />
             {children}
             <SiteFooter />
             <FloatingContact socials={socials} />
