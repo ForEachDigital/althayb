@@ -41,6 +41,7 @@ export interface Project {
     description: LocalizedText;
     gallery: string[];
     internalPhotos: string[];           // ✅ NEW
+    internalVideo?: string;             // ✅ NEW - for internal project videos
 
     video?: string;
     coordinates: { lat: number; lng: number };     // ✅ NEW
@@ -90,7 +91,7 @@ With Al Rimal, the focus is simple: a home that feels right from day one—consi
       `,
         },
         gallery: ["/projects/p-1.JPG"],
-        internalPhotos: ["/projects/p-1.JPG"],
+        internalPhotos: [],
     },
     {
         id: "p-02",
@@ -134,7 +135,7 @@ At Al Janadriyah, every detail is intentional: a home that’s practical, elegan
       `,
         },
         gallery: ["/projects/p-2.JPG"],
-        internalPhotos: ["/projects/p-2.JPG"],
+        internalPhotos: [],
     },
     {
         id: "p-03",
@@ -191,11 +192,9 @@ If you want a home that feels truly yours—stylish, practical, and comfortable�
             "/projects/p-3/Screenshot 1447-06-06 at 11.42.58 AM.png",
             "/projects/p-3/Screenshot 1447-06-06 at 11.43.54 AM.png"
         ],
-        internalPhotos: [
-            "/projects/p-3/Retouch_20251127_123237_0.png",
-            "/projects/p-3/Retouch_20251127_123306_0.png"
-        ],
-        video: "/projects/p-3/videos/p3_v3.mp4",
+        internalPhotos: [],
+        internalVideo: "/projects/p-3/videos/p3_v1.mp4",
+        video: "/projects/p-3/videos/p3_v0.mp4",
     },
 ];
 

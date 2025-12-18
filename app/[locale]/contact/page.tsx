@@ -18,10 +18,10 @@ export default function ContactPage() {
                 {/* Illustration / hero side */}
                 <div className="relative hidden h-[450px] w-full md:block">
                     <Image
-                        src="/logo.png" /* add any nice free image */
+                        src="/althyab_fav.svg" /* add any nice free image */
                         alt="Contact illustration"
                         fill
-                        className="object-cover mt-5 rounded-3xl shadow-lg"
+                        className=" mt-5 rounded-3xl shadow-lg"
                         priority
                     />
                 </div>
